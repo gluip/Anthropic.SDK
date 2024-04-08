@@ -52,9 +52,9 @@ namespace Anthropic.SDK.Tests
             {
                 new()
                 {
-                    name = "get_weather",
-                    description = "Get the current weather",
-                    input_schema = new InputSchema()
+                    Name = "get_weather",
+                    Description = "Get the current weather",
+                    Arguments = new InputSchema()
                     {
                         type = "object",
                         properties = new Dictionary<string,Property>()
@@ -93,7 +93,7 @@ namespace Anthropic.SDK.Tests
             messages.Add(assitantMessage);
             
 
-            var toolCall = res.Content.FirstOrDefault(c => c.Type == "tool_use");
+            var toolCall = res.Content.FirstOrDefault(c => c.Type == ContentType.tool_use);
             var toolCallId = toolCall.Id;
             var responseMessage = new Message()
             {
