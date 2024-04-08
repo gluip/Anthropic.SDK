@@ -5,13 +5,13 @@ using System.Text.Json.Serialization;
 
 namespace Anthropic.SDK.Messaging
 {
-    public class Content
+    public class ContentRespone
     {
         [JsonPropertyName("text")]
         public string Text { get; set; }
 
         [JsonPropertyName("type")]
-        public string Type { get; set; }
+        public ContentType Type { get; set; }
 
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -25,7 +25,7 @@ namespace Anthropic.SDK.Messaging
     public class MessageResponse
     {
         [JsonPropertyName("content")]
-        public List<Content> Content { get; set; }
+        public List<ContentRespone> Content { get; set; }
 
         [JsonPropertyName("id")]
         public string Id { get; set; }
